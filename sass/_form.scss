@@ -1,0 +1,52 @@
+@import "variables";
+
+form {
+    > div {
+      > div {
+        position: relative;
+        > input[type="email"]
+            {
+              &:invalid:focus:not(:placeholder-shown) {
+                background: url("../images/icon-error.svg");
+                background-size: 20px;
+                background-repeat: no-repeat;
+                background-position: 80% 20px;
+                & ~ .requirements {
+                  padding: 5px 30px 20px 30px;
+                }
+              }
+            }
+          }
+            .requirements {
+              max-height: 0;
+              transition: 0.28s;
+              overflow: hidden;
+              font-size:16px;
+              color:$pink;
+              font-weight: 600; 
+              margin-bottom: 40%; 
+            }
+          }
+    }
+
+    @media only screen and (max-width:600px) {
+      form  > div > input[type="email"] {
+          &:invalid:focus:not(:placeholder-shown) {
+            background: url("../images/icon-error.svg");
+            background-repeat: no-repeat;
+            background-position: 65% 20px;
+            & ~ .requirements {
+              position: relative;
+              bottom: 1100px;
+            }
+          }
+          .requirements {
+            transition: 0.28s;
+            overflow: hidden;
+            font-size: 16px;
+            color: #ce9797;
+            font-weight: 600;
+            position: absolute;
+          }
+        }
+    }
